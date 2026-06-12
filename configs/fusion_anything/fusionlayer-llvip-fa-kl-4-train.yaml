@@ -1,0 +1,77 @@
+model:
+  base_learning_rate: 2e-4
+  target: ldm.models.fusion.autoencoder2fusion.AutoFusionEncoder
+  params:
+    embed_dim: 3
+    lossconfig:
+      target: ldm.modules.losses.FusionLoss.FusionStageLoss
+      params: 
+        weigth: 0.5
+    first_stage_config:
+      target: ldm.models.autoencoder.AutoencoderKL
+      params:
+        embed_dim: 3
+        monitor: "val/rec_loss"
+        ckpt_path: "models/first_stage_models/kl-f4/model.ckpt"
+        ddconfig:
+          double_z: true
+          z_channels: 3
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+    scheduler_config: # 10000 warmup steps
+      target: ldm.lr_scheduler.LambdaLinearScheduler
+      params:
+        warm_up_steps: [2000]
+        cycle_lengths: [10000000000000]
+        f_start: [1.e-6]
+        f_max: [1.]
+        f_min: [ 1.]
+data:
+  target: main.DataModuleFromConfig
+  params:
+    batch_size: 8
+    wrap: True
+    train:
+      target: ldm.data.LLVIP.LLVIPFusionTrain
+      params:
+        size: 256
+        root: '.../dataset/'
+        split: train
+        keep_text: True
+        random_crop: False
+    validation:
+      target: ldm.data.LLVIP.LLVIPFusionVal
+      params:
+        size: 256
+        root: '.../dataset_test/'
+        split: val
+        keep_text: True
+        random_crop: False
+
+lightning:
+  check_val_every_n_steps: 10
+  callbacks:
+    image_logger:
+      target: main.ImageLogger
+      params:
+        batch_frequency: 2000
+        max_images: 8
+        increase_log_steps: False
+
+  trainer:
+    benchmark: True
+    max_epochs: 200
+    accumulate_grad_batches: 2
+    gradient_clip_val: 1.0
+

@@ -1,0 +1,24 @@
+[
+  {
+    "patch_id": "20251009162401_4326",
+    "image_name": "00104D",
+    "annotation_number": 1,
+    "positive_sample": "less_more",
+    "negative_sample": "more_less",
+    "prompt_data": {
+      "ir": "ir/00104D_ir_1.png",
+      "vis": "vis/00104D_vis_1.png",
+      "target": "target/00104D_positive_1.png",
+      "ref": "ref/00104D_negative_1.png",
+      "standard": "standard/00104D_standard_1.png",
+      "mask": "mask/00104D_mask_1.png",
+      "prompt": "Use standard mode to fuse images",
+      "reason": "Details"
+    },
+    "coordinates": {
+      "x": 384,
+      "y": 0,
+      "size": 256
+    }
+  }
+]

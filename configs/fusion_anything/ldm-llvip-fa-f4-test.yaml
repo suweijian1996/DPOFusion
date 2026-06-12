@@ -1,0 +1,75 @@
+model:
+  target: ldm.models.diffusion.ddpm_fusion.LatentDiffusion
+  params:
+    linear_start: 0.00085
+    linear_end: 0.0012
+    num_timesteps_cond: 1
+    log_every_t: 200
+    timesteps: 1000
+    loss_type: l1
+    aug_key: "aug_src"
+    first_stage_key: "image"
+    cond_stage_key: "txt"
+    image_size: 128
+    channels: 3
+    cond_stage_trainable: false
+    conditioning_key: crossattn
+    concat_mode: false
+    scale_by_std: true
+    monitor: 'val/loss_simple_ema'
+    ckpt_path: "XXXX.ckpt"
+    lossconfig:
+      target: torch.nn.Identity
+
+    unet_config:
+      target: ldm.modules.diffusionmodules.openaimodel.UNetModel
+      params:
+        image_size: 128
+        in_channels: 9
+        out_channels: 3
+        model_channels: 224
+        attention_resolutions: [8, 4, 2]
+        num_res_blocks: 2
+        channel_mult: [1, 2, 3, 4]
+        num_head_channels: 32
+
+    fusion_layer_config:
+      target: ldm.models.fusion.autoencoder2fusion.AutoFusionEncoder
+      params:
+        embed_dim: 3
+        ckpt_path: "models/fusion_layer_models/fusion_layer.ckpt"
+        lossconfig:
+          target: torch.nn.Identity
+        first_stage_config:
+          target: ldm.models.autoencoder.AutoencoderKL
+          params:
+            embed_dim: 3
+            monitor: "val/rec_loss"
+            ckpt_path: "models/first_stage_models/kl-f4/model.ckpt"
+            ddconfig:
+              double_z: true
+              z_channels: 3
+              resolution: 512
+              in_channels: 3
+              out_ch: 3
+              ch: 128
+              ch_mult: [1, 2, 4]
+              num_res_blocks: 2
+              attn_resolutions: []
+              dropout: 0.0
+            lossconfig:
+              target: torch.nn.Identity
+
+    cond_stage_config:
+      target: ldm.modules.encoders.modules.FrozenCLIPEmbedder
+
+data:
+  params:
+    validation:
+      target: ldm.data.LLVIP.LLVIPFusionVal
+      params:
+        size: 512
+        root: ".../dataset/"
+        split: val
+        keep_text: True
+        random_crop: False
