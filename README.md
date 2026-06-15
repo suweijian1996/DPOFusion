@@ -1,12 +1,12 @@
 # DPOFusion
 
-This is the official repository for **DPOFusion**. 
+This is the official repository for **DPOFusion (CVPR 2026)**. 
 
-**Paper:** [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) | **arXiv:** [2605.06049](https://arxiv.org/abs/2605.06049) | **Supplementary:** [PDF](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
+[Project Page](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) | [ArXiv](https://arxiv.org/abs/2605.06049) | [Supplementary](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
 
 ## Environment Setup
 
-Our project is built upon the environment of [Stable Diffusion (CompVis)](https://github.com/CompVis/stable-diffusion). Please follow the steps below to configure your environment:
+Our project is built upon the environment of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) and [ControlNet](https://github.com/lllyasviel/ControlNet). Please follow the steps below to configure your environment:
 
 1. Clone this repository:
    ```bash
@@ -68,7 +68,8 @@ If you find this work useful in your research, please consider citing:
 ## Acknowledgments
 
 This project is built upon the excellent work of:
-- [Latent Diffusion Models (LDM)](https://github.com/CompVis/stable-diffusion) by CompVis
+- [Latent Diffusion](https://github.com/CompVis/latent-diffusion) by CompVis
+- [Stable Diffusion](https://github.com/CompVis/stable-diffusion) by CompVis
 - [ControlNet](https://github.com/lllyasviel/ControlNet) by Lvmin Zhang
 
 We are grateful for their contributions to the open-source community.
