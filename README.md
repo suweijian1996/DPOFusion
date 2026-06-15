@@ -2,6 +2,8 @@
 
 This is the official repository for **DPOFusion**. 
 
+**Paper:** [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) | **arXiv:** [2605.06049](https://arxiv.org/abs/2605.06049) | **Supplementary:** [PDF](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
+
 ## Environment Setup
 
 Our project is built upon the environment of [Stable Diffusion (CompVis)](https://github.com/CompVis/stable-diffusion). Please follow the steps below to configure your environment:
