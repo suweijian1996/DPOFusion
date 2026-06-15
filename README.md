@@ -48,7 +48,10 @@ python control_fused.py ./data/infrared ./data/visible \
 
 **Note:** If you encounter out-of-memory issues, you can adjust the `--factor` parameter to scale down the input images (e.g., `--factor 2`).
 
-For more models and advanced options, please visit our [Google Drive folder](https://drive.google.com/drive/folders/1-JBVAQ3Mc5w8Bkq-33VYVggcYn8V2m2b?usp=drive_link).
+For more models and advanced options, please visit our [Google Drive folder](https://drive.google.com/drive/folders/1-JBVAQ3Mc5w8Bkq-33VYVggcYn8V2m2b?usp=drive_link). To use a different model, modify the model path in `control_fused.py`:
+```python
+model.load_state_dict(load_state_dict('./models/General_model.ckpt', location='cuda'))
+```
 
 ## Citation
 
