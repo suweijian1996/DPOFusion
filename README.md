@@ -18,11 +18,6 @@ Our project is built upon the environment of [Stable Diffusion (CompVis)](https:
    conda activate ldm
    ```
 
-3. Install additional dependencies if needed:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ## Quick Demo
 
 The **General Model** is capable of handling most tasks and is recommended for quick testing. Download the required model checkpoints and place them in the corresponding directories:
