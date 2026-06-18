@@ -28,7 +28,7 @@ The **General Model** is capable of handling most tasks and is recommended for q
 |-------|--------------|-----------|
 | General Model | [Download](https://drive.google.com/file/d/12YuplfOZKxBSAScoa121qlcaljvQ-v1n/view?usp=drive_link) | `models/` |
 | Fusion Layer  | [Download](https://drive.google.com/file/d/1FF1wqDx66laYHG1O2Rqv81Kw0D1WPZPi/view?usp=drive_link) | `models/fusion_layer_models/` |
-| VAE Encoder | [Download](https://drive.google.com/file/d/1ucQg0E4IqojRAnpXZQwBN4f7TTDMeRU2/view?usp=drive_link) | `models/first_stage_models/kl_f4/` |
+| VAE Model | [Download](https://drive.google.com/file/d/1ucQg0E4IqojRAnpXZQwBN4f7TTDMeRU2/view?usp=drive_link) | `models/first_stage_models/kl_f4/` |
 
 After setting up the environment and downloading the models, you can run a quick demo:
 
