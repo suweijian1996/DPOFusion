@@ -4,6 +4,22 @@ This is the official repository for **DPOFusion (CVPR 2026)**.
 
 [Project Page](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) | [ArXiv](https://arxiv.org/abs/2605.06049) | [Supplementary](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
 
+## Motivation
+
+<div align="center">
+  <img src="paper/fig1.png" width="800"/>
+</div>
+
+Image fusion aims to integrate information from multiple source images into a single fused image. However, different downstream applications have heterogeneous demands for fusion results. Our work addresses this challenge by aligning image fusion with diverse user preferences.
+
+## Framework
+
+<div align="center">
+  <img src="paper/fig2.png" width="800"/>
+</div>
+
+DPOFusion enables controllable fusion that adapts to various application requirements while maintaining high visual quality.
+
 ## Environment Setup
 
 Our project is built upon the environment of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) and [ControlNet](https://github.com/lllyasviel/ControlNet). Please follow the steps below to configure your environment:
