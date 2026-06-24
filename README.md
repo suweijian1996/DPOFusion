@@ -1,8 +1,12 @@
-# DPOFusion
+<div align="center">
+<br>
+<img src="paper/logo.png" width="200">
 
-This is the official repository for **DPOFusion (CVPR 2026)**. 
+<h3>Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization</h3>
 
-[Project Page](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) | [ArXiv](https://arxiv.org/abs/2605.06049) | [Supplementary](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
+ 
+[![ArXiv](https://img.shields.io/badge/ArXiv-2605.06049-b31b1b.svg)](https://arxiv.org/abs/2605.06049) [![Project Page](https://img.shields.io/badge/Project-Page-green.svg)](https://openaccess.thecvf.com/content/CVPR2026/html/Su_Fusion_in_Your_Way_Aligning_Image_Fusion_with_Heterogeneous_Demands_CVPR_2026_paper.html) [![Supplementary](https://img.shields.io/badge/Supplementary-PDF-blue.svg)](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Su_Fusion_in_Your_CVPR_2026_supplemental.pdf)
+</div>
 
 ## Motivation
 
